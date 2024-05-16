@@ -84,7 +84,6 @@ border: none;outline: none;cursor: pointer;border-radius: 25px;box-shadow: 2px 2
         <button id="submit">Envoyer le formulaire</button><br>
         <p id="merci"></p>
     </div>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin = "anonymous" referrerpolicy = "no-referrer"> </script>
     <script>
         var answers = {'q1' : false,'q2' : false,'q25' : true,'q3' : 5,'q4' : false,"q45" : true,'q5' : false,'q6' : false,'q7' : false,'q8' : false,'q9' : 5, 'q10' : true};
         spoilerq2 = document.getElementsByClassName("distance-yes"); for (var i = 0; i < spoilerq2.length; i++) {spoilerq2[i].classList.add('hidden'); }
@@ -160,14 +159,15 @@ border: none;outline: none;cursor: pointer;border-radius: 25px;box-shadow: 2px 2
             ret = ret + tempo
             }
             Email.send({
-                SecureToken : "4d4feb77-b26b-4c97-8658-3d4d7af6c433",
-                To : 'ethan.legris76@gmail.com',
-                From : "studio.callipso@gmail.com",
+                SecureToken : "f7a60b6c-fb74-4ba7-ae61-08ab89d122fb",
+                To : 'questionnaire.emc.2024@gmail.com',
+                From : 'questionnaire.emc.2024@gmail.com',
                 Subject : "Résultat sondage",
                 Body : ret,
             }).then(
-            message => alert(message)
+            message => console.log(message)
         );
+        console.log(ret)
     })
     </script>
 </body>
