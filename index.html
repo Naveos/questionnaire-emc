@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .hidden {display: none;} *{margin:0;padding: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif;} body{height: 100%;display: grid;place-items: center;text-align: center;background: #dde1e7;} div{width: 550px;background: #dde1e7;border-radius: 10px;padding: 40px 30px;box-shadow: -3px -3px 7px #ffffff73,2px 2px 5px rgba(94, 104, 121, 0.288);} div section{font-size: 25px;font-weight: 600;margin-bottom: 35px;color: #000;} input[type=text], input[type=number]{height: 100%;width: 100%;padding-left: 45px;font-size: 18px;outline: none;border: none;color: #595959;background: #dde1e7;border-radius: 25px;box-shadow: inset 2px 2px 5px #babecc,inset -5px -5px 10px #ffffff73;} input[type=text]:focus, input[type=number]:focus{box-shadow: inset 2px 2px 5px #babecc,inset -1px -1px 2px #ffffff73;} button{margin: 25px 0 0 0;width: 100%;height: 50px;color: #000;font-size: 18px;font-weight: 600;background: #dde1e7;
+border: none;outline: none;cursor: pointer;border-radius: 25px;box-shadow: 2px 2px 5px #babecc,-5px -5px 10px #ffffff73;} button:focus{color: #3498db;box-shadow: inset 2px 2px 5px #babecc,inset -5px -5px 10px #ffffff73;} span{margin-left: 5%;margin-right: 5%;} div .question{font-weight: 650;}
+    </style>
+    <title>Questionnaire</title>
+</head>
+<body>
+    <div>
+        <section>Ce questionnaire est entièrement anonyme.</section>
+        <label class="question">1- Dans quelle tranche d'âge êtes vous situé ?</label><br>
+        <span><input type="radio" name="age" id="q2-1" value="13-15 ans" checked>
+        <label for="q2yes">13-15 ans</label></span>
+        <span><input type="radio" name="age" id="q2-2" value="16-20 ans">
+        <label for="q2no">16-20 ans</label></span>
+        <span><input type="radio" name="age" id="q2-3" value="21-30 ans">
+        <label for="q2no">21-30 ans</label></span><br>
+        <span><input type="radio" name="age" id="q2-4" value="31-50 ans">
+        <label for="q2no">31-50 ans</label></span>
+        <span><input type="radio" name="age" id="q2-5" value="51-80 ans">
+        <label for="q2no">51-80 ans</label></span>
+        <span><input type="radio" name="age" id="q2-6" value="80+ ans">
+        <label for="q2no">80+ ans</label></span><br>
+        <label class="question">2- Cette période de crise a-t-elle créé une distance entre vous et vos proches ?</label><br>
+        <span><input type="radio" name="distance" id="q2yes" value="oui">
+        <label for="q2yes">Oui</label></span>
+        <span><input type="radio" name="distance" id="q2no" value="non" checked>
+        <label for="q2no">Non</label></span><br>
+        <label class="distance-yes">Cet éloignement est il encore présent aujourd'hui ?</label><br>
+        <span><input class="distance-yes" type="radio" name="always-distance" id="yes">
+        <label class="distance-yes" for="yes">Oui</label></span>
+        <span><input class="distance-yes" type="radio" name="always-distance" id="no">
+        <label class="distance-yes" for="no">Non</label></span><br>
+        <label class="question">3- A quel point vous êtes vous sentis loins de vos proches pendant le confinement ?</label><br>
+        <label>Aucune sensation</label>
+        <input type="range" name="loneliness" id="loneliness" min="0" max="10" value="5">
+        <label>Sentiment profond</label><br>
+        <label class="question">4- Cette crise a-t-elle changée vos habitudes de vie ?</label><br>
+        <span><input type="radio" name="habits" id="q4yes" value="oui">
+        <label for="yes">Oui</label></span>
+        <span><input type="radio" name="habits" id="q4no" checked value="non" checked>
+        <label for="no">Non</label></span><br>
+        <label class="habits-yes">A quel niveau estimez vous ce changement ?</label><br>
+        <span><input class="habits-yes" type="radio" name="habits" id="no">
+        <label class="habits-yes" for="1">Je garde certaines habitudes</label></span><br>
+        <span><input class="habits-yes" type="radio" name="habits" id="no">
+        <label class="habits-yes" for="2">Je suis devenu plus strict sur mes habitudes</label></span><br>
+        <span><input class="habits-yes" type="radio" name="habits" id="no">
+        <label class="habits-yes" for="3">Je suis devenu très strict sur mes habitudes</label></span><br>
+        <label class="question">5- Estimez-vous que les choix du gouvernement étaient justifiés ?</label><br>
+        <span><input type="radio" name="gouv-choices" id="yes" value="oui">
+        <label for="yes">Oui</label></span>
+        <span><input type="radio" name="gouv-choices" id="no" value="non" checked>
+        <label for="no">Non</label></span><br>
+        <label class="question">6- Etiez-vous pour la prise du vaccin contre la COVID ?</label><br>
+        <span><input type="radio" name="anti-vacc" id="yes" value="oui">
+        <label for="yes">Oui</label></span>
+        <span><input type="radio" name="anti-vacc" id="no" value="non" checked>
+        <label for="no">Non</label></span><br>
+        <label class="question">7- Pensez vous que rendre le vaccin obligatoire était la bonne solution ?</label><br>
+        <span><input type="radio" name="obli-vacc" id="yes" value="oui">
+        <label for="yes">Oui</label></span>
+        <span><input type="radio" name="obli-vacc" id="no" value="non" checked>
+        <label for="no">Non</label></span><br>
+        <label class="question">8- Avez vous attrapé la COVID ?</label><br>
+        <span><input type="radio" name="covid" id="yes" value="oui">
+        <label for="yes">Oui</label></span>
+        <span><input type="radio" name="covid" id="no" value="non" checked>
+        <label for="no">Non</label></span><br>
+        <label class="question">9- Pensez vous que cette crise a exposé certaines failles dans le système sanitaire français ?</label><br>
+        <label>Aucun problème</label>
+        <input type="range" name="overcharge" id="overcharge" min="0" max="10" value="5">
+        <label>Surcharge des services</label><br>
+        <label class="question">10- (Facultatif) En imaginant que vous ayez le pouvoir de décisions gouvernementales, en cas de nouvelle crise sanitaire quelles seraient vos actions ?</label><br>
+        <input type="text" id="dictat"><br><br>
+        <button id="submit">Envoyer le formulaire</button><br>
+        <p id="merci"></p>
+    </div>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin = "anonymous" referrerpolicy = "no-referrer"> </script>
+    <script>
+        var answers = {'q1' : false,'q2' : false,'q25' : true,'q3' : 5,'q4' : false,"q45" : true,'q5' : false,'q6' : false,'q7' : false,'q8' : false,'q9' : 5, 'q10' : true};
+        spoilerq2 = document.getElementsByClassName("distance-yes"); for (var i = 0; i < spoilerq2.length; i++) {spoilerq2[i].classList.add('hidden'); }
+        spoilerq4 = document.getElementsByClassName("habits-yes"); for (var i = 0; i < spoilerq4.length; i++) {spoilerq4[i].classList.add('hidden'); }
+        var radios = document.getElementsByName('age');
+        for(var i = 0; i < radios.length; i++){if(radios[i].checked){answers["q1"] = radios[i].value;}}
+        radios = document.getElementsByName('distance');
+        for(var i = 0; i < radios.length; i++){if(radios[i].checked){answers["q2"] = radios[i].value;}}
+        document.getElementById("q2no").addEventListener("input", function() {
+        spoilerq2 = document.getElementsByClassName("distance-yes");
+        answers["q25"] = false;
+        for (var i = 0; i < spoilerq2.length; i++) {
+            spoilerq2[i].classList.add('hidden'); }})
+        document.getElementById("q2yes").addEventListener("input", function() {
+        spoilerq2 = document.getElementsByClassName("distance-yes");
+        for (var i = 0; i < spoilerq2.length; i++) {
+            spoilerq2[i].classList.remove('hidden');
+        }})
+        document.getElementById("loneliness").addEventListener("input", function() {
+            answers["q3"] = document.getElementById("loneliness").value
+        })
+        radios = document.getElementsByName('habits');
+        for(var i = 0; i < radios.length; i++){
+            if(radios[i].checked){
+                answers["q4"] = radios[i].value;
+        }}
+        document.getElementById("q4no").addEventListener("input", function() {
+            spoilerq2 = document.getElementsByClassName("habits-yes");
+            answers["q25"] = false
+            for (var i = 0; i < spoilerq2.length; i++) {
+                spoilerq2[i].classList.add('hidden'); }})
+        document.getElementById("q4yes").addEventListener("input", function() {
+            spoilerq2 = document.getElementsByClassName("habits-yes");
+            for (var i = 0; i < spoilerq2.length; i++) {
+                spoilerq2[i].classList.remove('hidden');
+        }})
+        radios = document.getElementsByName('gouv-choices');
+        for(var i = 0; i < radios.length; i++){
+            if(radios[i].checked){
+                answers["q5"] = radios[i].value;
+        }}
+        radios = document.getElementsByName('anti-vacc');
+        for(var i = 0; i < radios.length; i++){
+            if(radios[i].checked){
+                answers["q6"] = radios[i].value;
+        }}
+        radios = document.getElementsByName('obli-vacc');
+        for(var i = 0; i < radios.length; i++){
+            if(radios[i].checked){
+                answers["q7"] = radios[i].value;
+        }}
+        radios = document.getElementsByName('covid');
+        for(var i = 0; i < radios.length; i++){
+            if(radios[i].checked){
+                answers["q8"] = radios[i].value;
+        }}
+        document.getElementById("overcharge").addEventListener("input", function() {
+            answers["q9"] = document.getElementById("overcharge").value
+        })
+        document.getElementById("dictat").addEventListener("input", function() {
+            answers["q10"] = document.getElementById("dictat").value
+        })
+        var submit = document.getElementById("submit");
+        submit.addEventListener("click", function (e) {
+            fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                answers["ip"] = data.ip;
+            })
+            let ret = ""
+            for (const property in answers) {
+            let tempo = `${property}: ${answers[property]}, `
+            ret = ret + tempo
+            }
+            Email.send({
+                SecureToken : "4d4feb77-b26b-4c97-8658-3d4d7af6c433",
+                To : 'ethan.legris76@gmail.com',
+                From : "studio.callipso@gmail.com",
+                Subject : "Résultat sondage",
+                Body : ret,
+            }).then(
+            message => alert(message)
+        );
+    })
+    </script>
+</body>
+</html>
